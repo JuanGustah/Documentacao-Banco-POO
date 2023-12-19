@@ -1,0 +1,16 @@
+info:
+  title: API Banco
+  description: |-
+    Este documento descreve a API REST consumida por um cliente front-end web,
+    que representa um sistema bancário fictício.
+
+    Desenvolvida como exemplo para a disciplina de Programação Orientada a Objetos.
+  version: "1.0.0"
+host: "http://localhost:4000"
+basePath: /api/v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json

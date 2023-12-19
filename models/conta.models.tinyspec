@@ -1,0 +1,6 @@
+//Definição de Conta
+Conta{
+    cliente: Cliente,
+    numero,
+    saldo: float
+}

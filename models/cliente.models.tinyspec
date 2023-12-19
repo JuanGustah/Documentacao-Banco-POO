@@ -1,0 +1,9 @@
+//Definição de Cliente
+Cliente{
+    cpf,
+    nome,
+    endereco: Endereco
+}
+
+
+

@@ -1,0 +1,11 @@
+POST /transferir {numeroConta1, numeroConta2, valor:f}
+    => 200 {mensagem}
+    => 400 {status:i, erro:{ mensagem }}
+
+POST /debitar {numeroConta, valor:f}
+    => 200 {mensagem}
+    => 400 {status:i, erro:{ mensagem }}
+
+POST /creditar {numeroConta, valor:f}
+    => 200 {mensagem}
+    => 400 {status:i, erro:{ mensagem }}

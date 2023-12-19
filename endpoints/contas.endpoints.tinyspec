@@ -1,0 +1,18 @@
+GET /conta/:numeroConta
+    => 200 {conta: Conta}
+    => 400 {status:i, erro:{ mensagem }}
+
+POST /conta {numeroConta, tipoConta, cpfCliente, saldo:f}
+    => 200 {conta: Conta}
+    => 400 {status:i, erro:{ mensagem }}
+
+DELETE /conta/:numeroConta
+    => 200 {mensagem}
+    => 400 {status:i, erro:{ mensagem }}
+
+
+
+    
+
+
+

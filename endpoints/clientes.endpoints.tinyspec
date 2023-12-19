@@ -1,0 +1,15 @@
+GET /cliente/:codigo
+    => 200 {cliente: Cliente}
+    => 400 {status:i, erro:{ mensagem }}
+
+POST /cliente {codigo, nome, cep, numero, complemento}
+    => 200 {cliente: Cliente}
+    => 400 {status:i, erro:{ mensagem }}
+
+DELETE /cliente {cpf}
+    => 200 {mensagem}
+    => 400 {status:i, erro:{ mensagem }}
+
+PUT /cliente {codigo, nome, cep, numero, complemento}
+    => 200 {cliente: Cliente}
+    => 400 {status:i, erro:{ mensagem }}

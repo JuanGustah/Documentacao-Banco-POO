@@ -1,0 +1,6 @@
+//Definição de Endereço
+Endereco{
+    cep,
+    numero,
+    complemento
+}
