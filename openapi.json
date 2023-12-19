@@ -1,0 +1,771 @@
+{
+  "info": {
+    "title": "API Banco",
+    "description": "Este documento descreve a API REST consumida por um cliente front-end web,\nque representa um sistema bancário fictício.\n\nDesenvolvida como exemplo para a disciplina de Programação Orientada a Objetos.",
+    "version": "1.0.0"
+  },
+  "host": "http://localhost:4000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/cliente/{codigo}": {
+      "get": {
+        "summary": "GET /cliente/:codigo",
+        "description": "GET /cliente/:codigo",
+        "operationId": "GET--cliente--codigo",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cliente": {
+                  "$ref": "#/definitions/Cliente"
+                }
+              },
+              "required": [
+                "cliente"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "codigo",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/cliente": {
+      "post": {
+        "summary": "POST /cliente",
+        "description": "POST /cliente",
+        "operationId": "POST--cliente",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cliente": {
+                  "$ref": "#/definitions/Cliente"
+                }
+              },
+              "required": [
+                "cliente"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "codigo": {
+                  "type": "string"
+                },
+                "nome": {
+                  "type": "string"
+                },
+                "cep": {
+                  "type": "string"
+                },
+                "numero": {
+                  "type": "string"
+                },
+                "complemento": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "codigo",
+                "nome",
+                "cep",
+                "numero",
+                "complemento"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      },
+      "put": {
+        "summary": "PUT /cliente",
+        "description": "PUT /cliente",
+        "operationId": "PUT--cliente",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cliente": {
+                  "$ref": "#/definitions/Cliente"
+                }
+              },
+              "required": [
+                "cliente"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "codigo": {
+                  "type": "string"
+                },
+                "nome": {
+                  "type": "string"
+                },
+                "cep": {
+                  "type": "string"
+                },
+                "numero": {
+                  "type": "string"
+                },
+                "complemento": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "codigo",
+                "nome",
+                "cep",
+                "numero",
+                "complemento"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      }
+    },
+    "/cliente/{cpf}": {
+      "delete": {
+        "summary": "DELETE /cliente/:cpf",
+        "description": "DELETE /cliente/:cpf",
+        "operationId": "DELETE--cliente--cpf",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mensagem"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cpf",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/conta/{numeroConta}": {
+      "get": {
+        "summary": "GET /conta/:numeroConta",
+        "description": "GET /conta/:numeroConta",
+        "operationId": "GET--conta--numeroConta",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conta": {
+                  "$ref": "#/definitions/Conta"
+                }
+              },
+              "required": [
+                "conta"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "numeroConta",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      },
+      "delete": {
+        "summary": "DELETE /conta/:numeroConta",
+        "description": "DELETE /conta/:numeroConta",
+        "operationId": "DELETE--conta--numeroConta",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mensagem"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "numeroConta",
+            "type": "string",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/conta": {
+      "post": {
+        "summary": "POST /conta",
+        "description": "POST /conta",
+        "operationId": "POST--conta",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conta": {
+                  "$ref": "#/definitions/Conta"
+                }
+              },
+              "required": [
+                "conta"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numeroConta": {
+                  "type": "string"
+                },
+                "tipoConta": {
+                  "type": "string"
+                },
+                "cpfCliente": {
+                  "type": "string"
+                },
+                "saldo": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "numeroConta",
+                "tipoConta",
+                "cpfCliente",
+                "saldo"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      }
+    },
+    "/transferir": {
+      "post": {
+        "summary": "POST /transferir",
+        "description": "POST /transferir",
+        "operationId": "POST--transferir",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mensagem"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numeroConta1": {
+                  "type": "string"
+                },
+                "numeroConta2": {
+                  "type": "string"
+                },
+                "valor": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "numeroConta1",
+                "numeroConta2",
+                "valor"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      }
+    },
+    "/debitar": {
+      "post": {
+        "summary": "POST /debitar",
+        "description": "POST /debitar",
+        "operationId": "POST--debitar",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mensagem"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numeroConta": {
+                  "type": "string"
+                },
+                "valor": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "numeroConta",
+                "valor"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      }
+    },
+    "/creditar": {
+      "post": {
+        "summary": "POST /creditar",
+        "description": "POST /creditar",
+        "operationId": "POST--creditar",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mensagem"
+              ]
+            }
+          },
+          "400": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer"
+                },
+                "erro": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "mensagem"
+                  ]
+                }
+              },
+              "required": [
+                "status",
+                "erro"
+              ]
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numeroConta": {
+                  "type": "string"
+                },
+                "valor": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "numeroConta",
+                "valor"
+              ]
+            },
+            "in": "body"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Cliente": {
+      "title": "Definição de Cliente",
+      "description": "Definição de Cliente",
+      "type": "object",
+      "properties": {
+        "cpf": {
+          "type": "string"
+        },
+        "nome": {
+          "type": "string"
+        },
+        "endereco": {
+          "$ref": "#/definitions/Endereco"
+        }
+      },
+      "required": [
+        "cpf",
+        "nome",
+        "endereco"
+      ]
+    },
+    "Conta": {
+      "title": "Definição de Conta",
+      "description": "Definição de Conta",
+      "type": "object",
+      "properties": {
+        "cliente": {
+          "$ref": "#/definitions/Cliente"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "saldo": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "cliente",
+        "numero",
+        "saldo"
+      ]
+    },
+    "Endereco": {
+      "title": "Definição de Endereço",
+      "description": "Definição de Endereço",
+      "type": "object",
+      "properties": {
+        "cep": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "complemento": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cep",
+        "numero",
+        "complemento"
+      ]
+    }
+  }
+}
